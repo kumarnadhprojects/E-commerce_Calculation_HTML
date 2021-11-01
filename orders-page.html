@@ -85,7 +85,7 @@
             buttonEl.classList.add("d-none");
         })
 
-        if (localStorage.getItem("subtotal") == "") {
+        if (localStorage.getItem("subtotal") == "0" || localStorage.getItem("subtotal") == "") {
             subtotalOrdersEl.textContent = "0";
             taxEl.textContent = "0";
             deliveryEl.textContent = "0";
