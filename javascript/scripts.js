@@ -45,6 +45,10 @@ if (qty1El.textContent == "0") {
     noItemsEl.textContent = "No items";
     productCart2El.classList.add("d-none");
 }
+if (qty3El.textContent == "0") {
+    noItemsEl.textContent = "No items";
+    productCart3El.classList.add("d-none");
+}
 
 function onIncrease() {
     // let previousValue = spam1El.textContent;
