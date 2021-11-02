@@ -21,7 +21,7 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <!-- Title -->
-    <title>Explore and To Do Application</title>
+    <title>Explore and Do Application</title>
 </head>
 
 <body>
@@ -54,15 +54,15 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
                     <div class="card">
-                        <img src="images/product1.jpg" class="img-fluid card-img-top" alt="product1">
+                        <input class="imgupload d-none" type="file" id="imgupload" accept=".jpg, .jpeg, .png" multiple>
+                        <div class="preview">
+                            <img id="OpenImgUpload" src="images/product1.jpg" class="img-fluid card-img-top"
+                                alt="product1">
+                        </div>
+
                         <div class="card-body">
                             <h5 class="card-title text-right pt-2">
-                                <!-- <button onclick="onDecrease()" class="button mr-2"><i
-                                        class="fas fa-minus"></i></button><span id="spam1">0</span><button
-                                    onclick="onIncrease()" class="button ml-2"><i class="fas fa-plus"></i>
-                                </button> -->
                             </h5>
-                            <!-- <hr> -->
                             <div class="p-2">
                                 <button type="button" class="button w-100" data-toggle="modal"
                                     data-target="#exampleModal-1">
@@ -81,14 +81,15 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card">
-                        <img src="images/product2.jpg" class="img-fluid card-img-top" alt="product2">
+                        <input class="imgupload2 d-none" type="file" id="imgupload2" accept=".jpg, .jpeg, .png"
+                            multiple>
+                        <div class="preview2">
+                            <img id="OpenImgUpload2" src="images/product2.jpg" class="img-fluid card-img-top"
+                                alt="product2">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title text-right pt-2">
-                                <!-- <button onclick="onDecrease2()" class="button mr-2"><i
-                                        class="fas fa-minus"></i></button><span id="spam2">0</span><button
-                                    onclick="onIncrease2()" class="button ml-2"><i class="fas fa-plus"></i></button> -->
                             </h5>
-                            <!-- <hr> -->
                             <div class="p-2">
                                 <button type="button" class="button w-100" data-toggle="modal"
                                     data-target="#exampleModal-2">
@@ -107,15 +108,15 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card">
-                        <img src="images/product3.jpg" class="img-fluid card-img-top" alt="product3">
+                        <input class="imgupload3 d-none" type="file" id="imgupload3" accept=".jpg, .jpeg, .png"
+                            multiple>
+                        <div class="preview3">
+                            <img id="OpenImgUpload3" src="images/product3.jpg" class="img-fluid card-img-top"
+                                alt="product3">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title text-right pt-2">
-                                <!-- <button onclick="onDecrease3()"
-                                    class="button mr-2"><i class="fas fa-minus"></i></button><span
-                                    id="spam3">0</span><button onclick="onIncrease3()" class="button ml-2"><i
-                                        class="fas fa-plus"></i></button> -->
                             </h5>
-                            <!-- <hr> -->
                             <div class="p-2">
                                 <button type="button" class="button w-100" data-toggle="modal"
                                     data-target="#exampleModal-3">
@@ -137,15 +138,12 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <!-- <div class="modal-header"> -->
-                            <!-- <div class="modal-title" id="exampleModalLabel">
-                                </div> -->
-                            <!-- </div> -->
                             <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <img class="img-fluid" src="images/product1.jpg" alt="product1">
+                                    <img id="model-image" src="images/product1.jpg" class="img-fluid card-img-top"
+                                        alt="product1">
                                 <div class="pt-2">
                                     <div class="d-flex">
                                         <button id="modelclickbtn1" class="w-50 btn btn-primary"><span
@@ -154,13 +152,24 @@
                                                 id="model1Button2">15</span> ml</button>
                                     </div>
                                 </div>
-                                <div class="text-right pt-2"><button onclick="onDecrease()" class="button mr-2"><i
-                                            class="fas fa-minus"></i></button><span id="spam4">0</span><button
-                                        onclick="onIncrease()" class="button ml-2"><i class="fas fa-plus"></i></button>
+                                <div class="d-flex pt-2">
+                                    <div class="w-100 text-center">
+                                        <button id ="onDecrease" class="button mr-2">
+                                            <i class="fas fa-minus"></i></button>
+                                            <span id="spam4">0</span><button id="onIncrease" class="button ml-2">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="w-100 text-center">
+                                        <button id ="onDecreaseSection1" class="button mr-2">
+                                            <i class="fas fa-minus"></i></button>
+                                            <span id="spam4Section1">0</span><button id="onIncreaseSection1" class="button ml-2">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer d-flex">
-                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                                 <button id="cart1" type="button" data-dismiss="modal" class="btn btn-primary w-100"
                                     data-toggle="modal" data-target="#exampleModal-4">
                                     Add to Cart
@@ -174,30 +183,39 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <!-- <div class="modal-header"> -->
-                            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
-                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button> -->
-                            <!-- </div> -->
                             <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <img class="img-fluid" src="images/product2.jpg" alt="product1">
+                                <img id="model-image2" class="img-fluid" src="images/product2.jpg" alt="product1">
                                 <div class="pt-2">
                                     <div class="d-flex">
                                         <button id="model2clickbtn1" class="w-50 btn btn-primary">20 ml</button>
                                         <button id="model2clickbtn2" class="ml-2 w-50 btn btn-primary">30 ml</button>
                                     </div>
                                 </div>
-                                <div class="text-right pt-2"><button onclick="onDecrease2()" class="button mr-2"><i
-                                            class="fas fa-minus"></i></button><span id="spam5">0</span><button
-                                        onclick="onIncrease2()" class="button ml-2"><i class="fas fa-plus"></i></button>
+                                <div class="d-flex pt-2">
+                                    <div class="w-100 text-center">
+                                        <button id="onDecrease2" class="button mr-2"><i
+                                            class="fas fa-minus"></i></button>
+                                            <span id="spam5">0</span>
+                                            <button
+                                        id="onIncrease2" class="button ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    </div>
+                                    <div class="w-100 text-center">
+                                        <button id="onDecrease2Section2" class="button mr-2"><i
+                                            class="fas fa-minus"></i></button>
+                                            <span id="spam5Section2">0</span>
+                                            <button
+                                        id="onIncrease2Section2" class="button ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer d-flex">
-                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                                 <button id="cart2" type="button" data-dismiss="modal" class="btn btn-primary w-100"
                                     data-toggle="modal" data-target="#exampleModal-4">
                                     Add to Cart
@@ -211,30 +229,41 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <!-- <div class="modal-header"> -->
-                            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
-                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button> -->
-                            <!-- </div> -->
                             <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <img class="img-fluid" src="images/product3.jpg" alt="product1">
+                                <img id="model-image3" class="img-fluid" src="images/product3.jpg" alt="product1">
                                 <div class="pt-2">
                                     <div class="d-flex">
                                         <button id="model3clickbtn1" class="w-50 btn btn-primary">40 ml</button>
                                         <button id="model3clickbtn2" class="ml-2 w-50 btn btn-primary">50 ml</button>
                                     </div>
                                 </div>
-                                <div class="text-right pt-2"><button onclick="onDecrease3()" class="button mr-2"><i
-                                            class="fas fa-minus"></i></button><span id="spam6">0</span><button
-                                        onclick="onIncrease3()" class="button ml-2"><i class="fas fa-plus"></i></button>
+                                <div class="d-flex pt-2">
+                                    <div class="w-100 text-center">
+                                        <button id="onDecrease3" class="button mr-2"><i
+                                            class="fas fa-minus"></i>
+                                        </button>
+                                        <span id="spam6">0</span>
+                                        <button
+                                        id="onIncrease3" class="button ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    </div>
+                                    <div class="w-100 text-center">
+                                        <button id="onDecrease3Section3" class="button mr-2"><i
+                                            class="fas fa-minus"></i>
+                                        </button>
+                                        <span id="spam6Section3">0</span>
+                                        <button
+                                        id="onIncrease3Section3" class="button ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer d-flex">
-                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                                 <button id="cart3" type="button" data-dismiss="modal" class="btn btn-primary w-100"
                                     data-toggle="modal" data-target="#exampleModal-4">
                                     Add to cart
@@ -257,34 +286,67 @@
                             <div class="modal-body text-center">
                                 <p id="no-items"></p>
                                 <div id="product-cart1">
-                                    <span onclick="onIncrease()"></span>
-                                    <span onclick="onDecrease()"></span>
-                                    <span><strong>Product1:</strong></span>
-                                    <span id="product1" class="m-2"></span>
-                                    <span><strong>Rupees:</strong></span>
-                                    <span id="rupees1" class="m-2">0</span>
-                                    <span><strong>Quantity:</strong></span>
-                                    <span id="qty1" class="m-2">0</span>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span id="onIncrease"></span>
+                                        <span id="onDecrease"></span>
+                                        <span><strong>Product1:</strong></span>
+                                        <span id="product1" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees1" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty1" class="m-2">0</span>
+                                    </div>
+                                    <!-- Secound Element -->
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span><strong>Product1:</strong></span>
+                                        <span id="product1Item2" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees1Item2" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty1Item2" class="m-2">0</span>
+                                    </div>
                                 </div>
                                 <div id="product-cart2">
-                                    <span onclick="onIncrease2()"></span>
-                                    <span onclick="onDecrease2()"></span>
-                                    <span><strong>Product2:</strong></span>
-                                    <span id="product2" class="m-2"></span>
-                                    <span><strong>Rupees:</strong></span>
-                                    <span id="rupees2" class="m-2">0</span>
-                                    <span><strong>Quantity:</strong></span>
-                                    <span id="qty2" class="m-2">0</span>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span id="onIncrease2"></span>
+                                        <span id="onDecrease2"></span>
+                                        <span><strong>Product2:</strong></span>
+                                        <span id="product2" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees2" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty2" class="m-2">0</span>
+                                    </div>
+                                    <!-- Secound Element -->
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span><strong>Product2:</strong></span>
+                                        <span id="product2Item2" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees2Item2" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty2Item2" class="m-2">0</span>
+                                    </div>
                                 </div>
                                 <div id="product-cart3">
-                                    <span onclick="onIncrease3()"></span>
-                                    <span onclick="onDecrease3()"></span>
-                                    <span><strong>Product3:</strong></span>
-                                    <span id="product3" class="m-2"></span>
-                                    <span><strong>Rupees:</strong></span>
-                                    <span id="rupees3" class="m-2">0</span>
-                                    <span><strong>Quantity:</strong></span>
-                                    <span id="qty3" class="m-2">0</span>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span id="onIncrease3"></span>
+                                        <span id="onDecrease3"></span>
+                                        <span><strong>Product3:</strong></span>
+                                        <span id="product3" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees3" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty3" class="m-2">0</span>
+                                    </div>
+                                    <!-- Secound Element -->
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span><strong>Product3:</strong></span>
+                                        <span id="product3Item2" class="m-2"></span>
+                                        <span><strong>Rupees:</strong></span>
+                                        <span id="rupees3Item2" class="m-2">0</span>
+                                        <span><strong>Quantity:</strong></span>
+                                        <span id="qty3Item2" class="m-2">0</span>
+                                    </div>
                                 </div>
                                 <br>
                                 <div class="m-2 d-flex justify-content-end">
