@@ -59,6 +59,13 @@ onDecrease3Section3El = document.getElementById('onDecrease3Section3');
 onIncrease3Section3El = document.getElementById('onIncrease3Section3');
 spam6Section3El = document.getElementById('spam6Section3');
 
+productCart1Element1El = document.getElementById('product-cart1-element1');
+productCart1Element2El = document.getElementById('product-cart1-element2');
+productCart2Element1El = document.getElementById('product-cart2-element1');
+productCart2Element2El = document.getElementById('product-cart2-element2');
+productCart3Element1El = document.getElementById('product-cart3-element1');
+productCart3Element2El = document.getElementById('product-cart3-element2');
+
 if (qty1El.textContent == "0") {
     noItemsEl.textContent = "No items";
     productCart1El.classList.add("d-none");
@@ -71,6 +78,7 @@ if (qty1El.textContent == "0") {
 }
 
 // 10Ml button
+product1El.textContent = "10ml";
 modelclickbtn1El.onclick = function () {
     onIncreaseEl.onclick = function () {
         let previousValue4 = spam4El.textContent;
@@ -103,6 +111,7 @@ modelclickbtn1El.onclick = function () {
         if (spam4El.textContent > "0" && qty1El.textContent > "0") {
             spam4El.textContent = updatedValue4;
             qty1El.textContent = updatedValueqt1;
+            product1El.textContent = "10ml";
             rupees1El.textContent = 10 * updatedValueqt1;
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
@@ -110,6 +119,7 @@ modelclickbtn1El.onclick = function () {
 }
 
 // 15Ml button
+product1Item2El.textContent = "15ml";
 modelclickbtn2El.onclick = function () {
     onIncreaseSection1El.onclick = function () {
         let previousValue4 = spam4Section1El.textContent;
@@ -150,6 +160,7 @@ modelclickbtn2El.onclick = function () {
 }
 
 // 20Ml button
+product2El.textContent = "20ml";
 model2clickbtn1El.onclick = function () {
     onIncrease2El.onclick = function () {
         let previousValue5 = spam5El.textContent;
@@ -158,6 +169,7 @@ model2clickbtn1El.onclick = function () {
         let updatedValueqt2 = parseInt(previousValueqt2) + 1;
         spam5El.textContent = updatedValue5;
         qty2El.textContent = updatedValueqt2;
+        
         if (qty2El.textContent == "0") {
             rupees2El.textContent = "0";
             product2El.textContent = "0";
@@ -187,6 +199,7 @@ model2clickbtn1El.onclick = function () {
 }
 
 // 30Ml button
+product2Item2El.textContent = "30ml";
 model2clickbtn2El.onclick = function () {
     onIncrease2Section2El.onclick = function () {
         let previousValue5 = spam5Section2El.textContent;
@@ -195,6 +208,7 @@ model2clickbtn2El.onclick = function () {
         let previousValueqtItem2El = parseInt(previousValueqtItem2) + 1;
         spam5Section2El.textContent = updatedValue5;
         qty2Item2El.textContent = previousValueqtItem2El;
+
 
         if (qty2Item2El.textContent > "0") {
             noItemsEl.textContent = "";
@@ -226,6 +240,7 @@ model2clickbtn2El.onclick = function () {
 }
 
 // 40Ml button
+product3El.textContent = "40ml";
 model3clickbtn1El.onclick = function () {
     onIncrease3El.onclick = function () {
         let previousValue6 = spam6El.textContent;
@@ -234,7 +249,7 @@ model3clickbtn1El.onclick = function () {
         let updatedValueqt3 = parseInt(previousValueqt3) + 1;
         spam6El.textContent = updatedValue6;
         qty3El.textContent = updatedValueqt3;
-        console.log(product3El.textContent)
+
         if (qty3El.textContent == "0") {
             rupees3El.textContent = "0";
             product3El.textContent = "0";
@@ -264,6 +279,7 @@ model3clickbtn1El.onclick = function () {
 }
 
 // 50Ml button
+product3Item2El.textContent = "50ml";
 model3clickbtn2El.onclick = function () {
     onIncrease3Section3El.onclick = function () {
         let previousValue6 = spam6Section3El.textContent;
