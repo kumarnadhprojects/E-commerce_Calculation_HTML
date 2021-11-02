@@ -27,6 +27,15 @@ body {
     padding: 0px;
 }
 
+.card-img-top{
+    cursor: pointer;
+}
+
+.img-border{
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
 hr {
     border-width: 2px;
     margin: 0px;
