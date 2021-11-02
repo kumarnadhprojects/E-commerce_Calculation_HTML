@@ -98,16 +98,12 @@ modelclickbtn1El.onclick = function () {
     onDecreaseEl.onclick = function () {
         let previousValue4 = spam4El.textContent;
         let previousValueqt1 = qty1El.textContent;
-        let updatedValueqtItem21 = qty1El.textContent;
         let updatedValue4 = parseInt(previousValue4) - 1;
         let updatedValueqt1 = parseInt(previousValueqt1) - 1;
-        let updatedValueqtItemEl1 = parseInt(updatedValueqtItem21) - 1;
         if (spam4El.textContent > "0" && qty1El.textContent > "0") {
             spam4El.textContent = updatedValue4;
             qty1El.textContent = updatedValueqt1;
             rupees1El.textContent = 10 * updatedValueqt1;
-            qty1Item2El.textContent = updatedValueqtItemEl1;
-            rupees1Item2El.textContent = 10 * updatedValueqtItemEl1;
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
     }
@@ -123,14 +119,11 @@ modelclickbtn2El.onclick = function () {
         spam4Section1El.textContent = updatedValue4;
         qty1Item2El.textContent = updatedValueqtItemEl1;
 
-        if (qty1El.textContent > "0") {
+        if (qty1Item2El.textContent > "0") {
             noItemsEl.textContent = "";
             productCart1El.classList.add("d-block");
         }
-        if (qty1Item2El.textContent > "0") {
-            noItemsEl.textContent = "";
-            product1Item2El.classList.add("d-block");
-        }
+
         if (qty1Item2El.textContent == "0") {
             rupees1Item2El.textContent = "0";
             qty1Item2El.textContent = "0";
@@ -202,6 +195,12 @@ model2clickbtn2El.onclick = function () {
         let previousValueqtItem2El = parseInt(previousValueqtItem2) + 1;
         spam5Section2El.textContent = updatedValue5;
         qty2Item2El.textContent = previousValueqtItem2El;
+
+        if (qty2Item2El.textContent > "0") {
+            noItemsEl.textContent = "";
+            productCart2El.classList.add("d-block");
+        }
+
         if (qty2Item2El.textContent == "0") {
             rupees2Item2El.textContent = "0";
             product2Item2El.textContent = "0";
@@ -211,14 +210,12 @@ model2clickbtn2El.onclick = function () {
             product2Item2El.textContent = "30ml";
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
-        if (qty2Item2El.textContent > "0") {
-            noItemsEl.textContent = "";
-            productCart2El.classList.add("d-block");
-        }
     }
     onDecrease2Section2El.onclick = function () {
         let previousValue5 = spam5Section2El.textContent;
+        let previousValueqt2 = qty2Item2El.textContent;
         let updatedValue5 = parseInt(previousValue5) - 1;
+        let updatedValueqt2 = parseInt(previousValueqt2) - 1;
         if (spam5Section2El.textContent > "0" && qty2Item2El.textContent > "0") {
             spam5Section2El.textContent = updatedValue5;
             qty2Item2El.textContent = updatedValueqt2;
@@ -275,7 +272,12 @@ model3clickbtn2El.onclick = function () {
         let updatedValueqt3 = parseInt(previousValueqt3) + 1;
         spam6Section3El.textContent = updatedValue6;
         qty3Item2El.textContent = updatedValueqt3;
-        console.log(product3Item2El.textContent)
+
+        if (qty3Item2El.textContent > "0") {
+            noItemsEl.textContent = "";
+            productCart3El.classList.add("d-block");
+        }
+
         if (qty3Item2El.textContent == "0") {
             rupees3Item2El.textContent = "0";
             product3Item2El.textContent = "0";
@@ -285,10 +287,6 @@ model3clickbtn2El.onclick = function () {
             product3Item2El.textContent = "50ml";
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
-        if (qty3Item2El.textContent > "0") {
-            noItemsEl.textContent = "";
-            productCart3El.classList.add("d-block");
-        }
     }
     onDecrease3Section3El.onclick = function () {
         let previousValue6 = spam6Section3El.textContent;
@@ -297,6 +295,7 @@ model3clickbtn2El.onclick = function () {
         let updatedValueqt3 = parseInt(previousValueqt3) - 1;
         if (spam6Section3El.textContent > "0" && qty3Item2El.textContent > "0") {
             spam6Section3El.textContent = updatedValue6;
+            qty3Item2El.textContent = updatedValueqt3;
             rupees3Item2El.textContent = 50 * updatedValueqt3;
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
