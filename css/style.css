@@ -65,3 +65,8 @@ hr {
 .border-btm{
     border-bottom: 1px dotted #222121;
 }
+
+.visible-hidden {
+    visibility: hidden;
+}
+
