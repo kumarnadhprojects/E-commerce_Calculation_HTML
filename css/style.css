@@ -70,3 +70,7 @@ hr {
     visibility: hidden;
 }
 
+/* File upload */
+article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+
