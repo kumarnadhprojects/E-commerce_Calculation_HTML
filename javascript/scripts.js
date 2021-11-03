@@ -350,155 +350,70 @@ cheackoutEl.onclick = function () {
     localStorage.setItem("subtotal", amountEl.textContent);
 }
 
-// ------ Upload files functionality in javascript
-const fileTypes = [
-    "image/apng",
-    "image/bmp",
-    "image/gif",
-    "image/jpeg",
-    "image/pjpeg",
-    "image/png",
-    "image/svg+xml",
-    "image/tiff",
-    "image/webp",
-    "image/x-icon"
-];
-
-function validFileType(file) {
-    return fileTypes.includes(file.type);
-}
-
-// First image display
-
-function updateImageDisplay() {
-    while (preview.firstChild) {
-        preview.removeChild(preview.firstChild);
-    }
-
-    const curFiles = input.files;
-    if (curFiles.length === 0) {
-        const para = document.createElement('p');
-        preview.appendChild(para);
-    } else {
-        const list = document.createElement('ol');
-        list.classList.add("list-unstyled")
-        preview.appendChild(list);
-
-        for (const file of curFiles) {
-            const listItem = document.createElement('li');
-            const para = document.createElement('p');
-            if (validFileType(file)) {
-                modelImageEl.src = URL.createObjectURL(file);
-                const image = document.createElement('img');
-                image.src = URL.createObjectURL(file);
-                image.classList.add('img-fluid', 'img-border');
-                listItem.appendChild(image);
-                listItem.appendChild(para);
-            } else {
-                listItem.appendChild(para);
-            }
-
-            list.appendChild(listItem);
-        }
-    }
-}
-
-// Secound image display
-
-function updateImageDisplay2() {
-    while (preview2.firstChild) {
-        preview2.removeChild(preview2.firstChild);
-    }
-
-    const curFiles = imgupload2El.files;
-    if (curFiles.length === 0) {
-        const para = document.createElement('p');
-        preview2.appendChild(para);
-    } else {
-        const list = document.createElement('ol');
-        list.classList.add("list-unstyled")
-        preview2.appendChild(list);
-
-        for (const file of curFiles) {
-            const listItem = document.createElement('li');
-            const para = document.createElement('p');
-            if (validFileType(file)) {
-                modelImage1El.src = URL.createObjectURL(file);
-                const image = document.createElement('img');
-                image.src = URL.createObjectURL(file);
-                image.classList.add('img-fluid', 'img-border');
-                listItem.appendChild(image);
-                listItem.appendChild(para);
-            } else {
-                listItem.appendChild(para);
-            }
-
-            list.appendChild(listItem);
-        }
-    }
-}
-
-// Third image display
-
-function updateImageDisplay3() {
-    while (preview3.firstChild) {
-        preview3.removeChild(preview3.firstChild);
-    }
-
-    const curFiles3 = imgupload3El.files;
-
-    if (curFiles3.length === 0) {
-        const para = document.createElement('p');
-        preview3.appendChild(para);
-    } else {
-        const list = document.createElement('ol');
-        list.classList.add("list-unstyled")
-        preview3.appendChild(list);
-
-        for (const file of curFiles3) {
-            const listItem = document.createElement('li');
-            const para = document.createElement('p');
-            if (validFileType(file)) {
-                modelImage2El.src = URL.createObjectURL(file);
-                const image = document.createElement('img');
-                image.src = URL.createObjectURL(file);
-                image.classList.add('img-fluid', 'img-border');
-                listItem.appendChild(image);
-                listItem.appendChild(para);
-            } else {
-                listItem.appendChild(para);
-            }
-
-            list.appendChild(listItem);
-        }
-    }
-}
-
-
-const input = document.querySelector('.imgupload');
-const preview = document.querySelector('.preview');
-
-const imgupload2El = document.querySelector('.imgupload2');
-const preview2 = document.querySelector('.preview2');
-
-const imgupload3El = document.querySelector('.imgupload3');
-const preview3 = document.querySelector('.preview3');
-
-input.addEventListener('change', updateImageDisplay);
-imgupload2El.addEventListener('change', updateImageDisplay2);
-imgupload3El.addEventListener('change', updateImageDisplay3);
-
 // Jquery file upload function
 
-$('#OpenImgUpload').click(function () {
-    $('#imgupload').trigger('click');
+$('.OpenImgUpload').click(function () {
+    $('.imgupload').trigger('click');
 });
 
 
-$('#OpenImgUpload2').click(function () {
-    $('#imgupload2').trigger('click');
+$('.OpenImgUpload2').click(function () {
+    $('.imgupload2').trigger('click');
 });
 
-$('#OpenImgUpload3').click(function () {
-    $('#imgupload3').trigger('click');
+$('.OpenImgUpload3').click(function () {
+    $('.imgupload3').trigger('click');
 });
+
+// File upload Functionality
+
+// First image
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+            $('#model-image')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Secound image
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah1')
+                .attr('src', e.target.result)
+            $('#model-image2')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Third image
+function readURL3(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah2')
+                .attr('src', e.target.result)
+            $('#model-image3')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+
