@@ -25,45 +25,32 @@ model3clickbtn2El = document.getElementById('model3clickbtn2');
 product1Item2El = document.getElementById('product1Item2');
 rupees1Item2El = document.getElementById('rupees1Item2');
 qty1Item2El = document.getElementById('qty1Item2');
-
 product2Item2El = document.getElementById('product2Item2');
 rupees2Item2El = document.getElementById('rupees2Item2');
 qty2Item2El = document.getElementById('qty2Item2');
-
 product3Item2El = document.getElementById('product3Item2');
 rupees3Item2El = document.getElementById('rupees3Item2');
 qty3Item2El = document.getElementById('qty3Item2');
-
 modelImageEl = document.getElementById('model-image');
 modelImage1El = document.getElementById('model-image2');
 modelImage2El = document.getElementById('model-image3');
-
 onIncreaseEl = document.getElementById('onIncrease');
 onDecreaseEl = document.getElementById('onDecrease');
-
 onIncrease2El = document.getElementById('onIncrease2');
 onDecrease2El = document.getElementById('onDecrease2');
-
 onIncrease3El = document.getElementById('onIncrease3');
 onDecrease3El = document.getElementById('onDecrease3');
-
 onDecreaseSection1El = document.getElementById('onDecreaseSection1');
 onIncreaseSection1El = document.getElementById('onIncreaseSection1');
 spam4Section1El = document.getElementById('spam4Section1');
-
 onDecrease2Section2El = document.getElementById('onDecrease2Section2');
 onIncrease2Section2El = document.getElementById('onIncrease2Section2');
 spam5Section2El = document.getElementById('spam5Section2');
-
 onDecrease3Section3El = document.getElementById('onDecrease3Section3');
 onIncrease3Section3El = document.getElementById('onIncrease3Section3');
 spam6Section3El = document.getElementById('spam6Section3');
-
-productCart1Element1El = document.getElementById('product-cart1-element1');
 productCart1Element2El = document.getElementById('product-cart1-element2');
-productCart2Element1El = document.getElementById('product-cart2-element1');
 productCart2Element2El = document.getElementById('product-cart2-element2');
-productCart3Element1El = document.getElementById('product-cart3-element1');
 productCart3Element2El = document.getElementById('product-cart3-element2');
 
 if (qty1El.textContent == "0") {
@@ -72,12 +59,15 @@ if (qty1El.textContent == "0") {
 } if (qty2El.textContent == "0") {
     noItemsEl.textContent = "No items";
     productCart2El.classList.add("d-none");
-}if (qty3El.textContent == "0") {
+} if (qty3El.textContent == "0") {
     noItemsEl.textContent = "No items";
     productCart3El.classList.add("d-none");
 }
 
 // 10Ml button
+if (spam4El.textContent == "0") {
+    productCart1El.classList.add("visible-hidden");
+}
 product1El.textContent = "10ml";
 modelclickbtn1El.onclick = function () {
     onIncreaseEl.onclick = function () {
@@ -92,6 +82,10 @@ modelclickbtn1El.onclick = function () {
             noItemsEl.textContent = "";
             productCart1El.classList.add("d-block");
         }
+
+        if (spam4El.textContent == "1"){
+            productCart1El.classList.remove("visible-hidden");
+        } 
 
         if (qty1El.textContent == "0") {
             rupees1El.textContent = "0";
@@ -119,6 +113,9 @@ modelclickbtn1El.onclick = function () {
 }
 
 // 15Ml button
+if (spam4Section1El.textContent == "0") {
+    productCart1Element2El.classList.add("visible-hidden");
+}
 product1Item2El.textContent = "15ml";
 modelclickbtn2El.onclick = function () {
     onIncreaseSection1El.onclick = function () {
@@ -132,6 +129,10 @@ modelclickbtn2El.onclick = function () {
         if (qty1Item2El.textContent > "0") {
             noItemsEl.textContent = "";
             productCart1El.classList.add("d-block");
+        }
+
+        if (spam4Section1El.textContent == "1"){
+            productCart1Element2El.classList.remove("visible-hidden");
         }
 
         if (qty1Item2El.textContent == "0") {
@@ -160,6 +161,9 @@ modelclickbtn2El.onclick = function () {
 }
 
 // 20Ml button
+if (spam5Section2El.textContent == "0") {
+    productCart2Element2El.classList.add("visible-hidden");
+}
 product2El.textContent = "20ml";
 model2clickbtn1El.onclick = function () {
     onIncrease2El.onclick = function () {
@@ -169,7 +173,12 @@ model2clickbtn1El.onclick = function () {
         let updatedValueqt2 = parseInt(previousValueqt2) + 1;
         spam5El.textContent = updatedValue5;
         qty2El.textContent = updatedValueqt2;
-        
+
+        if(spam5El.textContent == "1"){
+            productCart2El.classList.remove("visible-hidden");
+        }
+        console.log(spam5El.textContent)
+
         if (qty2El.textContent == "0") {
             rupees2El.textContent = "0";
             product2El.textContent = "0";
@@ -199,6 +208,9 @@ model2clickbtn1El.onclick = function () {
 }
 
 // 30Ml button
+if(spam5El.textContent == "0"){
+    productCart2El.classList.add("visible-hidden");
+}
 product2Item2El.textContent = "30ml";
 model2clickbtn2El.onclick = function () {
     onIncrease2Section2El.onclick = function () {
@@ -209,6 +221,9 @@ model2clickbtn2El.onclick = function () {
         spam5Section2El.textContent = updatedValue5;
         qty2Item2El.textContent = previousValueqtItem2El;
 
+        if (spam5Section2El.textContent == "1") {
+            productCart2Element2El.classList.remove("visible-hidden");
+        }
 
         if (qty2Item2El.textContent > "0") {
             noItemsEl.textContent = "";
@@ -238,8 +253,10 @@ model2clickbtn2El.onclick = function () {
         }
     }
 }
-
 // 40Ml button
+if (spam6El.textContent == "0"){
+    productCart3El.classList.add("visible-hidden")
+}
 product3El.textContent = "40ml";
 model3clickbtn1El.onclick = function () {
     onIncrease3El.onclick = function () {
@@ -263,6 +280,10 @@ model3clickbtn1El.onclick = function () {
             noItemsEl.textContent = "";
             productCart3El.classList.add("d-block");
         }
+        if (spam6El.textContent == "1"){
+            productCart3El.classList.remove("visible-hidden")
+        }
+
     }
     onDecrease3El.onclick = function () {
         let previousValue6 = spam6El.textContent;
@@ -279,6 +300,9 @@ model3clickbtn1El.onclick = function () {
 }
 
 // 50Ml button
+if (spam6Section3El.textContent == "0"){
+    productCart3Element2El.classList.add("visible-hidden")
+}
 product3Item2El.textContent = "50ml";
 model3clickbtn2El.onclick = function () {
     onIncrease3Section3El.onclick = function () {
@@ -303,6 +327,9 @@ model3clickbtn2El.onclick = function () {
             product3Item2El.textContent = "50ml";
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
+        if (spam6Section3El.textContent == "1"){
+            productCart3Element2El.classList.remove("visible-hidden")
+        }
     }
     onDecrease3Section3El.onclick = function () {
         let previousValue6 = spam6Section3El.textContent;
@@ -318,15 +345,12 @@ model3clickbtn2El.onclick = function () {
     }
 }
 
-
 cheackoutEl.onclick = function () {
     window.location.reload();
     localStorage.setItem("subtotal", amountEl.textContent);
 }
 
-
 // ------ Upload files functionality in javascript
-
 const fileTypes = [
     "image/apng",
     "image/bmp",
