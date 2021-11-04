@@ -1,3 +1,6 @@
+/* CSS File */
+
+/* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
@@ -69,8 +72,3 @@ hr {
 .visible-hidden {
     visibility: hidden;
 }
-
-/* File upload */
-article, aside, figure, footer, header, hgroup, 
-  menu, nav, section { display: block; }
-
