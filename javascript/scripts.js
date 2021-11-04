@@ -1,3 +1,6 @@
+// Javascript file
+
+// Getting id values
 spam4El = document.getElementById('spam4');
 spam5El = document.getElementById('spam5');
 spam6El = document.getElementById('spam6');
@@ -52,6 +55,72 @@ spam6Section3El = document.getElementById('spam6Section3');
 productCart1Element2El = document.getElementById('product-cart1-element2');
 productCart2Element2El = document.getElementById('product-cart2-element2');
 productCart3Element2El = document.getElementById('product-cart3-element2');
+// End getting values
+
+// Jquery file upload functionality
+
+$('.OpenImgUpload').click(function () {
+    $('.imgupload').trigger('click');
+});
+
+
+$('.OpenImgUpload2').click(function () {
+    $('.imgupload2').trigger('click');
+});
+
+$('.OpenImgUpload3').click(function () {
+    $('.imgupload3').trigger('click');
+});
+
+// First image
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+            $('#model-image')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Secound image
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah1')
+                .attr('src', e.target.result)
+            $('#model-image2')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Third image
+function readURL3(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah2')
+                .attr('src', e.target.result)
+            $('#model-image3')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// No items in the card values set default text value "No items"
 
 if (qty1El.textContent == "0") {
     noItemsEl.textContent = "No items";
@@ -63,6 +132,8 @@ if (qty1El.textContent == "0") {
     noItemsEl.textContent = "No items";
     productCart3El.classList.add("d-none");
 }
+
+// Button Functionalities
 
 // 10Ml button
 if (spam4El.textContent == "0") {
@@ -83,9 +154,9 @@ modelclickbtn1El.onclick = function () {
             productCart1El.classList.add("d-block");
         }
 
-        if (spam4El.textContent == "1"){
+        if (spam4El.textContent == "1") {
             productCart1El.classList.remove("visible-hidden");
-        } 
+        }
 
         if (qty1El.textContent == "0") {
             rupees1El.textContent = "0";
@@ -131,7 +202,7 @@ modelclickbtn2El.onclick = function () {
             productCart1El.classList.add("d-block");
         }
 
-        if (spam4Section1El.textContent == "1"){
+        if (spam4Section1El.textContent == "1") {
             productCart1Element2El.classList.remove("visible-hidden");
         }
 
@@ -174,7 +245,7 @@ model2clickbtn1El.onclick = function () {
         spam5El.textContent = updatedValue5;
         qty2El.textContent = updatedValueqt2;
 
-        if(spam5El.textContent == "1"){
+        if (spam5El.textContent == "1") {
             productCart2El.classList.remove("visible-hidden");
         }
         console.log(spam5El.textContent)
@@ -208,7 +279,7 @@ model2clickbtn1El.onclick = function () {
 }
 
 // 30Ml button
-if(spam5El.textContent == "0"){
+if (spam5El.textContent == "0") {
     productCart2El.classList.add("visible-hidden");
 }
 product2Item2El.textContent = "30ml";
@@ -254,7 +325,7 @@ model2clickbtn2El.onclick = function () {
     }
 }
 // 40Ml button
-if (spam6El.textContent == "0"){
+if (spam6El.textContent == "0") {
     productCart3El.classList.add("visible-hidden")
 }
 product3El.textContent = "40ml";
@@ -280,7 +351,7 @@ model3clickbtn1El.onclick = function () {
             noItemsEl.textContent = "";
             productCart3El.classList.add("d-block");
         }
-        if (spam6El.textContent == "1"){
+        if (spam6El.textContent == "1") {
             productCart3El.classList.remove("visible-hidden")
         }
 
@@ -300,7 +371,7 @@ model3clickbtn1El.onclick = function () {
 }
 
 // 50Ml button
-if (spam6Section3El.textContent == "0"){
+if (spam6Section3El.textContent == "0") {
     productCart3Element2El.classList.add("visible-hidden")
 }
 product3Item2El.textContent = "50ml";
@@ -327,7 +398,7 @@ model3clickbtn2El.onclick = function () {
             product3Item2El.textContent = "50ml";
             amountEl.textContent = parseInt(rupees2Item2El.textContent) + parseInt(rupees3Item2El.textContent) + parseInt(rupees1Item2El.textContent) + parseInt(rupees1El.textContent) + parseInt(rupees2El.textContent) + parseInt(rupees3El.textContent);
         }
-        if (spam6Section3El.textContent == "1"){
+        if (spam6Section3El.textContent == "1") {
             productCart3Element2El.classList.remove("visible-hidden")
         }
     }
@@ -345,75 +416,8 @@ model3clickbtn2El.onclick = function () {
     }
 }
 
+// Checkout Button
 cheackoutEl.onclick = function () {
     window.location.reload();
     localStorage.setItem("subtotal", amountEl.textContent);
 }
-
-// Jquery file upload function
-
-$('.OpenImgUpload').click(function () {
-    $('.imgupload').trigger('click');
-});
-
-
-$('.OpenImgUpload2').click(function () {
-    $('.imgupload2').trigger('click');
-});
-
-$('.OpenImgUpload3').click(function () {
-    $('.imgupload3').trigger('click');
-});
-
-// File upload Functionality
-
-// First image
-function readURL1(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah')
-                .attr('src', e.target.result)
-            $('#model-image')
-                .attr('src', e.target.result)
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-// Secound image
-function readURL2(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah1')
-                .attr('src', e.target.result)
-            $('#model-image2')
-                .attr('src', e.target.result)
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-// Third image
-function readURL3(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah2')
-                .attr('src', e.target.result)
-            $('#model-image3')
-                .attr('src', e.target.result)
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-
-
