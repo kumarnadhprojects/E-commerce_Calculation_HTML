@@ -48,6 +48,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -55,13 +57,15 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <!-- Custom Scripts -->
     <script>
         subtotalOrdersEl = document.getElementById('subtotal_orders');
         taxEl = document.getElementById('tax');
         deliveryEl = document.getElementById('delivery');
         grandTotalEl = document.getElementById('grandTotal');
-        // Save Webpage to PDF
 
+        // Save Webpage to PDF
         window.onload = function () {
             document.getElementById("download")
                 .addEventListener("click", () => {
@@ -77,7 +81,7 @@
                 })
         }
 
-        // Save Webpage to PDF
+        // Hideing the button element
 
         buttonEl = document.getElementById('download');
 
@@ -85,6 +89,7 @@
             buttonEl.classList.add("d-none");
         })
 
+        // Save data into local storage and display into screen
         if (localStorage.getItem("subtotal") == "0" || localStorage.getItem("subtotal") == "") {
             subtotalOrdersEl.textContent = "0";
             taxEl.textContent = "0";
